@@ -2040,6 +2040,8 @@ footer .container .gale .image img {
     justify-content: center;
     align-items: center;
     transition: var(--transition-duration);
+    cursor: pointer;
+    opacity: 0;
 }
 .rise:hover {
     background-color: #2b2a2a;
