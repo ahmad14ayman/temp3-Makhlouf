@@ -1,7 +1,9 @@
 let states = document.querySelector(".stats");
 let counters = document.querySelectorAll(".counters");
-let start = false;
-console.log(45)
+let skills = document.querySelector(".skills");
+let increasedSpans = document.querySelectorAll(".increased-span");
+let statesStart = false;
+
 
 window.onscroll = () => {
     /* =========================== Rise Button ==================== */
@@ -11,12 +13,24 @@ window.onscroll = () => {
         riseButton.style.opacity = 0;
     /* =========================== Increasing Number ==================== */
     if (window.scrollY >= (states.offsetTop - 500)) {
-        if (!start) {
+        if (!statesStart) {
             counters.forEach((el) => timer(el));
-            start = true;
+            statesStart = true;
         }
     }
+    /* =========================== Increasing Width ==================== */
+    if (window.scrollY >= (skills.offsetTop - 300)) {
+            increasedSpans.forEach((increasedSpan) => {
+                increasedSpan.style.width = increasedSpan.dataset.width;
+            })
+    } else {
+        increasedSpans.forEach((increasedSpan) => {
+            increasedSpan.style.width = "0%";
+        })
+    }
 }
+
+/* =========================== Increasing Number ==================== */
 
 function timer(el) {
     let goal = el.dataset.goal;
@@ -37,3 +51,5 @@ riseButton.onclick = function () {
         top: 0,
     })
 }
+
+/* =========================== Width Increasing ==================== */

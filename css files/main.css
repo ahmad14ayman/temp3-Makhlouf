@@ -2050,3 +2050,9 @@ footer .container .gale .image img {
     font-size: 30px;
     color: white;
 }
+
+
+.increased-span{
+    width: 0%;
+    transition: width 0.75s;
+}
